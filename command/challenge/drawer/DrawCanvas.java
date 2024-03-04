@@ -1,9 +1,9 @@
-package command.drawer;
+package command.challenge.drawer;
 
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
-import command.command.MacroCommand;
+import command.challenge.command.MacroCommand;
 
 public class DrawCanvas extends Canvas implements Drawable {
     private Color color = Color.red;
@@ -29,5 +29,23 @@ public class DrawCanvas extends Canvas implements Drawable {
         g.fillOval(x - radius, y - radius, radius * 2, radius * 2);
     }
 
+    @Override
+    public void setColor(String color) {
+        switch (color) {
+            case "red":
+                this.color = Color.red;
+                break;
+            case "green":
+                this.color = Color.green;
+                break;
+            case "blue":
+                this.color = Color.blue;
+                break;
+
+            default:
+                this.color = Color.black;
+                break;
+        }
+    }
 
 }
